@@ -5,6 +5,18 @@
     <title>Pinterest</title>
     <link rel="icon" type="image/x-icon" href="images/pinterest.png">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">    
+   <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var anchoPantalla = window.screen.width;
+            var minimoAncho = anchoPantalla / 8 ;
+        
+            var columnas = document.querySelectorAll('.column');
+            columnas.forEach(function(columna) {
+                columna.style.minWidth = minimoAncho + 'px';
+            });
+        });
+    </script>      
 </head>
 <body>
     <header>
@@ -408,5 +420,6 @@
 </div>
    
     </main>
+
 </body>
 </html>
