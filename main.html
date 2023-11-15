@@ -6,19 +6,29 @@
     <link rel="icon" type="image/x-icon" href="images/pinterest.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">    
-   <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var anchoPantalla = window.screen.width;
-            var minimoAncho = anchoPantalla / 8 ;
-        
-            var columnas = document.querySelectorAll('.column');
-            columnas.forEach(function(columna) {
-                columna.style.minWidth = minimoAncho + 'px';
-            });
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script>
+           window.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.column img');
 
-            
+    const imagePromises = Array.from(images).map(img => {
+        return new Promise((resolve, reject) => {
+            img.onload = resolve;
+            img.onerror = reject;
         });
-    </script>      
+    });
+
+    Promise.all(imagePromises).then(() => {
+        const msnry = new Masonry('main', {
+            itemSelector: '.column',
+            columnWidth: 250,
+            gutter: 10,
+            fitWidth: true,
+            transitionDuration: '0.2s',
+        });
+    });
+});
+    </script>
 </head>
 <body>
     <header>

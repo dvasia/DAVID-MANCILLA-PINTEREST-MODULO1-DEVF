@@ -12,7 +12,6 @@ header {
 }
 
 nav {
-    padding-right: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -114,22 +113,19 @@ nav {
 }
 
 main {
-    margin-top: 90px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start; /* Cambia de align-content a align-items */
-    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 90px;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: calc(100% / 8); /* Ajusta esta línea según el número de columnas que desees en una fila completa */
-    margin-bottom: 10px; /* Añade un margen al final de cada columna */
+    margin-bottom: 10px;
+    width: 250px;
+    min-width: 250px;
 }
-
 
 .column img {
     width: 100%;
@@ -241,12 +237,7 @@ main {
 
 @media screen and (max-width: 800px) { 
     .column {
-        width: calc((100% / 5) - 10px);
-        min-width:calc((100% / 5) - 10px);
-
+        width: 100%;
+        min-width: auto;
     }
-}
-
-@media screen and (max-width: 800px) {
-   
 }
