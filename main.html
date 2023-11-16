@@ -21,7 +21,7 @@
     Promise.all(imagePromises).then(() => {
         const msnry = new Masonry('main', {
             itemSelector: '.column',
-            columnWidth: 250,
+            columnWidth: 230,
             gutter: 10,
             fitWidth: true,
             transitionDuration: '0.2s',
@@ -34,8 +34,10 @@
     <header>
         <nav>
             <div class="nav-left">
-                <img src="images/pinterest.png" alt="Logo" style="height: 24px;">
-                <button type="button" class="nav-button">Inicio</button>
+                <a href="https://www.pinterest.com">
+                    <img src="images/pinterest.png" alt="Logo" style="height: 24px;">
+                </a>
+                <button id="inicio" type="button" class="nav-button">Inicio</button>
                 <button type="button" class="nav-button">Explorar</button>
                 <button type="button" class="nav-button">Crear</button>
             </div>
